@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Homepage</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>HOMEPAGE</h1>
+		<p th:text="${'Cartelle di ' + session.utente.username}"></p>
+	</header>
+        <div class="corpo">
+        
+        	<div align="right">
+				<a th:href="@{/Logout}" class="logout-link">LOGOUT</a> <br>
+				<a th:href="@{/GoToGestioneContenuti}">Gestione contenuti</a>
+			</div>
+        
+        	<div>
+	        	<ul class="top-level-list">
+        		<li th:each="c : ${cartelle}"><a
+  						th:href="@{/GoToContenuti(idCartella=${c.idCartella})}"
+                      	th:utext="${c.getNomeCartella()} + '<br>'"></a>
+                       	
+                <ul class="sottoc-list">
+				<li th:each="s : ${c.sottocartelle}"><a
+					th:href="@{/GoToContenuti(idCartella=${s.idCartella})}"
+                   	th:utext="${s.getNomeCartella()} + '<br>'"></a>
+                          	
+               	<ul class="sottoc-list">
+				<li th:each="s2 : ${s.sottocartelle}"><a
+				th:href="@{/GoToContenuti(idCartella=${s2.idCartella})}"
+                  	th:utext="${s2.getNomeCartella()} + '<br>'"></a>
+                            	
+               	<ul class="sottoc-list">
+				<li th:each="s3 : ${s2.sottocartelle}"><a
+					th:href="@{/GoToContenuti(idCartella=${s3.idCartella})}"
+                   	th:utext="${s3.getNomeCartella()} + '<br>'"></a>
+		                            	
+               	<ul class="sottoc-list">
+				<li th:each="s4 : ${s3.sottocartelle}"><a
+					th:href="@{/GoToContenuti(idCartella=${s4.idCartella})}"
+                  	th:utext="${s4.getNomeCartella()} + '<br>'"></a>
+				                            	
+				<ul class="sottoc-list">
+				<li th:each="s5 : ${s4.sottocartelle}"><a
+					th:href="@{/GoToContenuti(idCartella=${s5.idCartella})}"
+                   	th:utext="${s5.getNomeCartella()} + '<br>'"></a>
+						                            	
+                <ul class="sottoc-list">
+				<li th:each="s6 : ${s5.sottocartelle}"><a
+					th:href="@{/GoToContenuti(idCartella=${s6.idCartella})}"
+                   	th:utext="${s6.getNomeCartella()} + '<br>'"></a>
+				</li>
+ 				</ul>
+			</li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></div>
+		</div>
+    </body>
+</html>

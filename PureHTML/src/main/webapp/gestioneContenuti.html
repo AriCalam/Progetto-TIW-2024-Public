@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Gestione contenuti</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <header>
+            <h1>Gestione contenuti</h1>
+        </header>
+
+        <div class="corpo">
+        
+        	<div align="right">
+				<a th:href="@{/Logout}" class="logout-link">LOGOUT</a> <br>
+				<a th:href="@{/GoToHome}">Torna alla Home</a> <br>
+				<a href="#" onclick="history.go(-1)">Indietro</a>
+			</div>
+
+            <div class="login-panel">
+            	<h3>Crea cartella di primo livello</h3>
+            	
+            	<div th:if="${errCrea}">
+					<div class="errore" th:text="${errCrea}"></div> <br><br>
+				</div> 
+				
+				<div th:if="${okCrea}">
+					<div class="ok" th:text="${okCrea}"></div> <br><br>
+				</div>
+            	
+                <form action="CreaCartella" method="POST">
+                                
+                	<label for="nomeCartella">Nome cartella</label><br>
+                    <input type="text" class="input-box" placeholder="Massimo 16 caratteri"
+                    	id="nomeCartella" name="nomeCartella" max="16" required><br><br><br>
+
+                    <input type="submit" value="Crea">
+                </form>
+            </div>
+            
+            <div class="login-panel">
+            	<h3>Crea sottocartella</h3>
+            	
+            	<div th:if="${errCreaS}">
+					<div class="errore" th:text="${errCreaS}"></div> <br><br>
+				</div> 
+				
+				<div th:if="${okCreaS}">
+					<div class="ok" th:text="${okCreaS}"></div> <br><br>
+				</div>
+            	
+                <form action="CreaSottocartella" method="POST">
+                
+                	<label for="nomeCartella">Nome cartella</label><br>
+                    <input type="text" class="input-box" placeholder="Massimo 16 caratteri"
+                    	id="nomeCartella" name="nomeCartella" max="16" required><br><br>
+
+                    <label for="idPadre">Dentro la cartella</label><br>
+                    <select name="idPadre" id="idPadre">
+					    <option th:each="c : ${cartelle}"
+					     th:value="${c.idCartella}" th:text="${c.nomeCartella}">Cartella1</option>
+				  	</select><br><br><br>
+
+                    <input type="submit" value="Crea">
+                </form>
+            </div>
+            
+            <div class="login-panel">
+            	<h3>Crea documento</h3>
+            	
+            	<div th:if="${errCreaD}">
+					<div class="errore" th:text="${errCreaD}"></div> <br><br>
+				</div> 
+				
+				<div th:if="${okCreaD}">
+					<div class="ok" th:text="${okCreaD}"></div> <br><br>
+				</div>
+            	
+                <form action="CreaDoc" method="POST">                
+                	<label for="nomeDocumento">Nome documento</label><br>
+                    <input type="text" class="input-box" placeholder="Massimo 16 caratteri"
+                    	id="nomeDocumento" name="nomeDocumento" max="16" required><br><br>
+                    	
+                    <label for="tipo">Tipo</label><br>
+                    <input type="text" class="input-box" placeholder="Massimo 5 caratteri"
+                    	id="tipo" name="tipo" max="5" required><br><br>
+
+                    <label for="idPadre">Dentro la cartella</label><br>
+                    <select name="idPadre" id="idPadre">
+					    <option th:each="c : ${cartelle}"
+					     th:value="${c.idCartella}" th:text="${c.nomeCartella}">Cartella1</option>
+				  	</select><br><br>
+                    	
+                    <label for="sommario">Sommario</label><br>
+                    <input type="text" class="input-box" placeholder="Massimo 140 caratteri"
+                    	id="sommario" name="sommario" max="140" required><br><br><br>
+
+                    <input type="submit" value="Crea">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

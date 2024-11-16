@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0px;
+    background-color: #ADDEFF;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #6A7062;
+}
+
+.body-login {
+    margin: 0px;
+    background-color: #F3F3F7;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #6A7062;
+}
+
+header {
+    background-color: #ADDEFF;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: sticky;
+}
+
+.header-right {
+    text-align: right;
+}
+
+.header-left {
+    text-align: left;
+}
+
+h1 {
+    color: #3E442B;
+}
+
+a {
+    color: #9294A0;
+}
+
+a:hover {
+    color: #7878A5;
+}
+
+.corpo {
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+
+ul.top-level-list {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.login-panel {
+    margin: 100px auto;
+    width: 40%;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 2px 40px #3E442B;
+}
+
+.login-panel input {
+    width: 100%;
+    height: 2rem;
+}
+
+.errore {
+    color: red;
+}
+
+.ok {
+    color: green;
+}
+
+.select {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.option {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contenitoreSinistra {
+    flex: 1;
+}
+
+.contenitoreDestra {
+    flex: 1;
+    padding: 1rem;
+}
+
+.contCentro {
+    flex: 1;
+    padding: 1rem;
+}
+
+.cestino {
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.form1 {
+    width: 100%;
+    margin-right: 2rem;
+}
+
+.creation-form {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #3E442B;
+    border: 1px solid #6A7062;
+    margin-bottom: 10px;
+}
+
+.sc-form {
+    background-color: #fce0de;
+}
+
+.sottoc-add-btn {
+    background-color: #fce0de;
+}
+
+.sottoc-add-btn:hover {
+    background-color: #f59e98;
+}
+
+.doc-add-btn {
+    background-color: #defce4;
+}
+
+.doc-add-btn:hover {
+    background-color: #9af5ac;
+}
+
+.contenuti-view-btn:hover {
+    background-color: #c2c4c3;
+}
+
+.doc-form {
+    background-color: #defce4;
+}
+
+.c-form {
+    background-color: #fcfcde;
+}
+
+.hide-btn {
+    float: right;
+}
+
+.cont {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #3E442B;
+    border: 1px solid #6A7062;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.contenutiCartella {
+    width: 97%;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #3E442B;
+    border: 1px solid #6A7062;
+    margin-bottom: 10px;
+    /*background-color: #F3F3F7;*/
+    background-color: white;
+    margin-right: 10px;
+}
+
+.nomeElemento {
+    font-weight: bold;
+}
+
+.panel-title {
+    font-style: italic;
+}
+
+.upper-btn {
+    font-size: 16px;
+}
+
+.logout-btn {
+    background-color: white;
+    color: black;
+}
+
+.logout-btn:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.cart-add-btn {
+    background-color: #fcfcde;
+}
+
+.cart-add-btn:hover {
+    background-color: #f7f781;
+}
+
+button {
+    border: none;
+    margin: 0.5px;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.draggable {
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
+    cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.hide-btn {
+    border: none;
+    margin: 0.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #787877;
+    color: white;
+}
+
+.centerCol-hide-btn-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hide-btn-center {
+    border: none;
+    margin: 0.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #787877;
+    color: white;
+}
+
+fieldset {
+    border: none;
+}

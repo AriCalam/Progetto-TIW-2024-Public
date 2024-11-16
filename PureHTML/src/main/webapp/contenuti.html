@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Contenuti</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <header>
+            <h1 th:text="${'Cartella ' + cartella}"></h1>
+        </header>
+
+        <div class="corpo">
+        
+			<div align="right">
+				<a th:href="@{/Logout}" class="logout-link">LOGOUT</a> <br>
+				<a th:href="@{/GoToHome}">Torna alla Home</a> <br>
+				<a href="#" onclick="history.go(-1)">Indietro</a>
+			</div>
+			
+        	<p th:if="${sottocartelle != null}"
+        	th:text="${'Sottocartelle di ' + cartella + ':'}">Sottocartelle</p>
+            <ul class="top-level-list" title="Sottocartelle">
+                <li th:each="c : ${sottocartelle}">
+        			<a th:text="${c.nomeCartella}" th:href="@{/GoToContenuti(idCartella=${c.idCartella})}">
+        				CartellaBella</a>
+       			</li>
+       		</ul><br>
+       		<p th:text="${'Documenti in ' + cartella + ':'}">Documenti</p>
+       		<ul class="top-level-list" title="Documenti">
+       			<li th:each="d : ${documenti}">
+        			<a th:text="${d.nomeDocumento + d.tipo}">Documento1 | </a>
+        			<a th:href="@{/GoToDocPage(idDoc=${d.idDocumento})}">Accedi | </a>
+        			<a th:href="@{/GoToSpostamento(idDoc=${d.idDocumento})}">Sposta</a>
+       			</li>
+            </ul>
+        </div>
+    </body>
+</html>

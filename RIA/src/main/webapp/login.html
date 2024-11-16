@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="login.js" charset="utf-8" defer></script>
+</head>
+<body class="body-login">
+
+	<header>
+		<h1>Login</h1>
+	</header>
+
+	<div class="corpo">
+		<div class="login-panel">
+			<form id="loginForm" action="#" method="POST">
+				<fieldset id="loginFieldSet">
+					<p id="errorMsg" style="color: red"></p>
+					<p id="okMsg" style="color: green"></p>
+					<label for="username">Username</label><br> <input type="text"
+						class="input-box" placeholder="Massimo 16 caratteri" id="username"
+						name="username" max="16" min="1" required><br> <br>
+					<label for="password">Password</label><br> <input
+						type="password" class="input-box" placeholder="Almeno 8 caratteri"
+						id="password" name="password" min="8" max="16" required><br>
+					<br> <br> <input id="loginBtn" type="button"
+						value="Login" onclick="checkLogin()">
+				</fieldset>
+			</form>
+
+			<p>
+				Non hai un account? <a href="registrazione.html">Registrati</a>
+			</p>
+			<br> <br>
+		</div>
+	</div>
+</body>
+</html>

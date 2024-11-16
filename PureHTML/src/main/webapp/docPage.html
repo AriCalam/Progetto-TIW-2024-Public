@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>PaginaDocumento</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1 th:text="${'Documento ' + documento.getNomeDocumento() + documento.getTipo()}">Doc 1</h1>
+        </header>
+
+        <div class="corpo">
+        	<div align="right">
+				<a th:href="@{/Logout}" class="logout-link">LOGOUT</a> <br>
+				<a th:href="@{/GoToHome}">Torna alla Home</a> <br>
+				<a href="#" onclick="history.go(-1)">Indietro</a>
+			</div>
+        
+        	<p><strong>Nome: </strong></p>
+			<p th:text="${documento.getNomeDocumento()}"></p> <br>
+			
+			<p><strong>Cartella: </strong></p>
+			<p th:text="${cartellaPadre.getNomeCartella()}"></p> <br>
+        
+			<p><strong>Proprietario: </strong></p>
+			<p th:text="${documento.getProprietario()}"></p> <br>
+			
+			<p><strong>Data creazione: </strong></p>
+			<p th:text="${documento.getDataCreazione()}"></p> <br>
+			
+			<p><strong>Sommario: </strong></p>
+			<p th:text="${documento.getSommario()}"></p> <br>
+			
+			<p><strong>Tipo: </strong></p>
+			<p th:text="${documento.getTipo()}"></p> <br>
+        </div>
+    
+    </body>
+</html>

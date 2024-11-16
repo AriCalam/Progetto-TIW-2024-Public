@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <header>
+            <h1>Login</h1>
+        </header>
+
+        <div class="corpo">
+
+            <div class="login-panel">
+                <form action="ControllaLogin" method="POST">
+                
+                	<div th:if="${errLogin}">
+						<div class="errore" th:text="${errLogin}"></div><br><br>
+					</div>
+					
+					<div th:if="${okReg}">
+						<div class="ok" th:text="${okReg}"></div><br><br>
+					</div>
+                
+                	<label for="username">Username</label><br>
+                    <input type="text" class="input-box" placeholder="Massimo 16 caratteri"
+                    	id="username" name="username" max="16" required><br><br>
+
+                    <label for="password1">Password</label><br>
+                    <input type="password" class="input-box" placeholder="Almeno 8 caratteri"
+                    	id="password1" name="password1" min="8" required><br><br><br>
+
+                    <input type="submit" value="Login">
+                </form>
+
+                <p>Non hai un account? <a href="registrazione.html">Registrati</a> <br><br>
+            </div>
+
+        </div>
+    </body>
+</html>

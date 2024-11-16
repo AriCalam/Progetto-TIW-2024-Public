@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrazione</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="utils.js" charset="utf-8" defer></script>
+        <script src="registrazione.js" charset="utf-8" defer></script>
+    </head>
+    <body class="body-login">
+
+        <header>
+            <h1>Registrazione</h1>
+        </header>
+
+        <div class="corpo">
+            <div class="login-panel">
+                <form id="formReg" action="#" method="POST">
+					<fieldset id="regFieldset">
+						<p id="errorMsg" style="color: red"></p>
+						
+						<label for="username">Username</label><br>
+	                    <input type="text" class="input-box" placeholder="Massimo 16 caratteri"
+	                    	id="username" name="username" max="16" min="1" required><br><br>
+	
+	                    <label for="mail">E-Mail</label><br>
+	                    <input type="email" class="input-box" placeholder="indirizzo@mail.com"
+	                    	id="email" name="email" max="45" required><br><br>
+	
+	                    <label for="password1">Password</label><br>
+	                    <input type="password" class="input-box" placeholder="Almeno 8 caratteri"
+	                    	id="password1" name="password1" min="8" max="16" required><br><br>
+	
+	                    <label for="password2">Ripeti Password</label><br>
+	                    <input type="password" class="input-box" placeholder="Almeno 8 caratteri"
+	                    	id="password2" name="password2" min="8" max="16" required><br><br><br>
+	
+	                    <input type="button" onclick="checkSignup()" value="Registrati" id="regButton">
+                    </fieldset>
+                </form>
+                <a href="login.html">Indietro</a>
+            </div>
+        </div>
+    </body>
+</html>

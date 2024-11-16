@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Home spostamento</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Spostamento</h1>
+		<p th:text="${'Cartelle di ' + session.utente.username}"></p>
+	</header>
+        <div class="corpo">
+        	<h3 th:text="${'Stai spostando il documento ' + documento.getNomeDocumento()
+        	+ ' dalla cartella ' + padre.getNomeCartella()}">Sposta documento</h3>
+        
+        	<div align="right">
+				<a th:href="@{/Logout}" class="logout-link">LOGOUT</a> <br>
+				<a th:href="@{/GoToHome}">Torna alla Home</a> <br>
+				<a href="#" onclick="history.go(-1)">Indietro</a>
+			</div>
+        
+        	<div>
+	        	<ul class="top-level-list">
+	        		<li th:each="c : ${cartelle}"><a
+	        			th:if="${c.idCartella} != ${padre.idCartella}"
+   						th:href="@{/SpostaDoc(idPadre=${c.idCartella}, idDoc=${documento.idDocumento})}"
+                       	th:utext="${c.getNomeCartella()} + '<br>'"></a>
+                       	
+                       	<p th:text="${c.nomeCartella}" th:if="${c.idCartella} == ${padre.idCartella}"
+	        				>CartellaDiPartenza</p>
+                       	
+                       	<ul class="sottoc-list">
+        					<li th:each="s : ${c.sottocartelle}"><a
+        						th:if="${s.idCartella} != ${padre.idCartella}"
+        						th:href="@{/SpostaDoc(idPadre=${s.idCartella}, idDoc=${documento.idDocumento})}"
+                            	th:utext="${s.getNomeCartella()} + '<br>'"></a>
+                            	
+                            	<p th:text="${s.nomeCartella}" th:if="${s.idCartella} == ${padre.idCartella}"
+	        						>CartellaDiPartenza</p>
+                            	
+                            	<ul class="sottoc-list">
+		        					<li th:each="s2 : ${s.sottocartelle}"><a
+		        						th:if="${s2.idCartella} != ${padre.idCartella}"
+		        						th:href="@{/SpostaDoc(idPadre=${s2.idCartella}, idDoc=${documento.idDocumento})}"
+		                            	th:utext="${s2.getNomeCartella()} + '<br>'"></a>
+		                            	
+		                            	<p th:text="${s2.nomeCartella}" th:if="${s2.idCartella} == ${padre.idCartella}"
+	        								>CartellaDiPartenza</p>
+		                            	
+		                            	<ul class="sottoc-list">
+				        					<li th:each="s3 : ${s2.sottocartelle}"><a
+				        						th:if="${s3.idCartella} != ${padre.idCartella}"
+				        						th:href="@{/SpostaDoc(idPadre=${s3.idCartella}, idDoc=${documento.idDocumento})}"
+				                            	th:utext="${s3.getNomeCartella()} + '<br>'"></a>
+				                            	
+				                            	<p th:text="${s3.nomeCartella}" th:if="${s3.idCartella} == ${padre.idCartella}"
+	        										>CartellaDiPartenza</p>
+				                            	
+				                            	<ul class="sottoc-list">
+						        					<li th:each="s4 : ${s3.sottocartelle}"><a
+						        						th:if="${s4.idCartella} != ${padre.idCartella}"
+						        						th:href="@{/SpostaDoc(idPadre=${s4.idCartella}, idDoc=${documento.idDocumento})}"
+						                            	th:utext="${s4.getNomeCartella()} + '<br>'"></a>
+						                            	
+						                            	<p th:text="${s4.nomeCartella}" th:if="${s4.idCartella} == ${padre.idCartella}"
+	        												>CartellaDiPartenza</p>
+						                            	
+						                            	<ul class="sottoc-list">
+								        					<li th:each="s5 : ${s4.sottocartelle}"><a
+								        						th:if="${s5.idCartella} != ${padre.idCartella}"
+								        						th:href="@{/SpostaDoc(idPadre=${s5.idCartella}, idDoc=${documento.idDocumento})}"
+								                            	th:utext="${s5.getNomeCartella()} + '<br>'"></a>
+								                            	
+								                            	<p th:text="${s5.nomeCartella}" th:if="${s5.idCartella} == ${padre.idCartella}"
+	        														>CartellaDiPartenza</p>
+								                            	
+								                            	<ul class="sottoc-list">
+										        					<li th:each="s6 : ${s5.sottocartelle}"><a
+										        						th:if="${s6.idCartella} != ${padre.idCartella}"
+										        						th:href="@{/SpostaDoc(idPadre=${s6.idCartella}, idDoc=${documento.idDocumento})}"
+										                            	th:utext="${s6.getNomeCartella()} + '<br>'"></a>
+										                            	
+										                            	<p th:text="${s6.nomeCartella}" th:if="${s6.idCartella} == ${padre.idCartella}"
+	        																>CartellaDiPartenza</p>
+										        					</li>
+										        				</ul>
+			</li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Homepage</title>
+	<link href="style.css" rel="stylesheet" />
+	<script src="home.js" charset="utf-8" defer></script>
+	<script src="utils.js" charset="utf-8" defer></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+	<header>
+		<div class="header-left">
+			<h1>HOMEPAGE</h1>
+			<h2 class="titoloListaCartelle" id="title">Le tue cartelle</h2>
+		</div>
+
+		<div class="header-right">
+			<button type="button" id="newFolderBtn" class="upper-btn cart-add-btn">+ Cartella</button>
+			<button id="logout_btn" class="upper-btn logout-btn">LOGOUT</button>
+		</div>
+	</header>
+
+	<div class="corpo" id="div">
+		<div id="treeContainer" class="contenitoreSinistra cont">
+			<ul id="tree"></ul>
+		</div>
+
+		<div class="contCentro" id="contCentro">
+			<div id="contenutiCartella cont"></div>
+		</div>
+
+		<div class="contenitoreDestra" id="contenitoreDestra">
+			<form id="creaSottocartella" action="#" class="creation-form sc-form">
+				<h3 id="createSubFolderTitle">Crea sottocartella</h3>
+				<p id="errorMsgSC" style="color: red"></p>
+				<p id="okMsgSC" style="color: green"></p>
+				<label for="subFolderName">Nome</label>
+				<input type="text" id="nomeCartella" class="form1" name="nomeCartella" maxlength="16" required> <br>
+				<input type="hidden" id="idPadre" name="idPadre" class="hiddenInput">
+				<br>
+				<input type="submit" id="creaSC" value="Crea"> <input type="button" id="hideSC" class="hide-btn"
+					value="Nascondi pannello">
+			</form>
+
+			<form id="creaDocumento" action="#" class="creation-form doc-form">
+				<h3 id="creaDocTitle">Crea documento</h3>
+				<p id="errorMsgD" style="color: red"></p>
+				<p id="okMsgD" style="color: green"></p>
+				<label for="docName">Nome</label>
+				<input type="text" id="nomeDocumento" name="nomeDocumento" class="form1" maxlength="16" required>
+				<br> <label for="tipo">Tipo</label>
+				<input type="text" id="tipo" name="tipo" maxlength="5" class="form1" required> <br>
+				<label for="sommario">Sommario</label> <input class="form1" type="text" id="sommario" name="tipo"
+					maxlength="45" required> <br> <input type="hidden" id="idPadreDoc" name="idPadre" class="hiddenInput">
+				<br>
+				<input type="button" id="creaD" value="Crea" onclick="creaFile()">
+				<input type="button" id="hideD" class="hide-btn" value="Nascondi pannello">
+			</form>
+
+			<form id="creaCartella" action="#" class="creation-form c-form">
+				<h3 id="createFolderTitle">Crea cartella</h3>
+				<p id="errorMsgC" style="color: red"></p>
+				<p id="okMsgC" style="color: green"></p>
+				<label for="subFolderName">Nome</label> <input class="form1" type="text" id="nomeCartella"
+					name="nomeCartella" maxlength="16" required>
+				<br>
+				<br> <input type="submit" id="creaC" value="Crea"> <input type="button" id="hideC" class="hide-btn"
+					value="Nascondi pannello">
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
